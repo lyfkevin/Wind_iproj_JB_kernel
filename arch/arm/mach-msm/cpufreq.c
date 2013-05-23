@@ -431,8 +431,7 @@ static int __init msm_cpufreq_register(void)
 	}
 
 #ifdef CONFIG_SMP
-	msm_cpufreq_wq = alloc_workqueue("msm-cpufreq",
-			WQ_MEM_RECLAIM | WQ_HIGHPRI, 1);
+	msm_cpufreq_wq = alloc_workqueue("msm-cpufreq", WQ_HIGHPRI, 0);
 	register_hotcpu_notifier(&msm_cpufreq_cpu_notifier);
 #endif
 
